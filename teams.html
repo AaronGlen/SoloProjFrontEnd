@@ -29,7 +29,7 @@
     <h2> Description of team (e.g. members, major storylines, etc):</h2>
     <input class='form-control' type='text' id="description">
 
-    <button class="btn btn-danger" type="submit" id="submit"> submit </button>
+    <button  type="submit" id="CRUDButton"> Create Team </button>
 
 
   </form>
@@ -57,6 +57,17 @@
       <td>Doe</td>
       <td>80</td>
     </tr>
+  </table>
+  <table id = "buttonTable" style ="width:100%">
+    <tr>
+      <th>
+        <button id = "CRUDButton" onclick="deletePage()">Delete Entries</button>
+      </th>
+      <th>
+        <button id ="CRUDButton" onclick = "editPage()"> Edit Entries</button>
+      </th>
+    </tr>
+
   </table>
   <script src='script.js'></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

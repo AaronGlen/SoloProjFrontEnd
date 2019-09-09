@@ -56,7 +56,7 @@
     border:  border-style color;
     font-size: 100PX;
 }
-#submit{
-    width: 100px;
-    height: 50px;
+#CRUDButton{
+    width: 500px;
+    height: 30px;
 }
