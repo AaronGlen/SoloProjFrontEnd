@@ -9,16 +9,35 @@
 </head>
 
 <body>
-    <header>
+
   
-    <table id = 'teamTable' style="width:100%">
-        <header>
+   <div>
+
     <button onclick = 'homePage()' id = 'home'> Home</button>
     <button onclick = 'heroPage()' id = 'heroes'> Heroes</button>
     <button id = 'teams' >Teams</button>
+    </div>
+  <form onsubmit="return handleSubmit(this)">
+            <h1 > Create a new Team</h1>
+            <h2> Team name: </h2>
+        <input class='form-control' type='text'>
+       
+        <h2> 1st issue appeared or first main apperance: </h2>
+        <input class='form-control' type='text'>
+        
+          <h2> Description of team (e.g. members, major storylines, etc):</h2>
+        <input class='form-control' type='text'>
+        
+        <button class="btn btn-danger" type="submit" id = "submit"> submit </button>
+
+
+           </form>
+
+
+     <table id = 'teamTable' style="width:100%">
     
   <tr>
-    <th>Hero name</th>
+    <th>Team name</th>
     <th>1st issue</th> 
     <th>Description</th>
   </tr >
