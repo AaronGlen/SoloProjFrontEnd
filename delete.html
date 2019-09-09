@@ -14,6 +14,17 @@
                     <button onclick='teamPage()' id='teams'>Teams</button>
                   </div>
 
+                  <form onsubmit="return deleteHero(this)"  id = "deleteForm">
+                        <h2>Please enter the id of the Hero you'd like to delete: </h2>
+                        <input class='form-control' type='text' id ="heroNameDelete">
+                        <button id ="deleteButton"  type="submit">Delete Hero</button>
+                  </form>
+                  <form onsubmit="return deleteTeam(this)"  id = "deleteForm">
+                        <h2>Please enter the id of the Team you'd like to delete: </h2>
+                        <input class='form-control' type='text' id ="teamNameDelete">
+                        <button id ="deleteButton"  type="submit"> Delete Team</button>
+                  </form>
+
 
 
             <script src='script.js'></script>

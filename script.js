@@ -53,13 +53,14 @@ function handleSubmitTeam(form){
 
 
 function newTableEntries(table){
-    row = document.createElement("tr")
+    row = document.createElement("tr");
     for( let i =1; i <arguments.length;i++){
-        box = document.createElement("td")
+        box = document.createElement("td");
         box.innerHTML = arguments[i];
-        row.append(box)
+        row.append(box);
     }
-    table.append(row)
+    table.append(row);
 
 }
+
 
