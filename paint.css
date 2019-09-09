@@ -1,9 +1,12 @@
 #head{
-    border:10px solid gold; 
+    border:10px solid silver; 
     color: grey;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: yellow;
+    background-color: ivory;
     text-align: center;
+    height: 200px;
+    font-size: 150Px;
+
 
 }
 #home{
@@ -12,7 +15,7 @@
     border: 10px solid gold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
-    width: 700px;
+    width: 400px;
     height: 200px;
 }
 #heroes{
@@ -21,7 +24,7 @@
     border: 10px solid blue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
-    width: 700px;
+    width: 400px;
     height: 200px;
 }
 #teams{
@@ -30,7 +33,7 @@
     border: 10px solid red;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
-    width: 700px;
+    width: 400px;
     height: 200px;
 }
 
