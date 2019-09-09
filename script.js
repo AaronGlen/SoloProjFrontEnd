@@ -15,6 +15,19 @@ function teamPage(){
 
 location.href = "teams.html";
 }
+
+function deletePage(){
+
+    location.href = "delete.html";
+    }
+function editPage(){
+
+    location.href = "edit.html";
+}  
+
+
+
+
 const formDataObj = {};
     
 function handleSubmitHero(form){
