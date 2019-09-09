@@ -1,5 +1,6 @@
  
-
+const heroTable = document.getElementById("heroTable");
+const teamTable = document.getElementById("teamTable");
 function homePage(){
 
 location.href = "home.html";
@@ -16,31 +17,36 @@ location.href = "teams.html";
 }
 const formDataObj = {};
     
-function handleSubmit(form){
+function handleSubmitHero(form){
    
     for (let element of form.elements) {
         formDataObj[element.id] = element.value;
     }
     console.log(formDataObj);
-    newTableEntries(formDataObj["heroName"],formDataObj["issueOne"],formDataObj["description"]);
+    newTableEntries(heroTable,formDataObj["heroName"],formDataObj["issueOne"],formDataObj["description"]);
+    return false;
+}
+function handleSubmitTeam(form){
+   
+    for (let element of form.elements) {
+        formDataObj[element.id] = element.value;
+    }
+    console.log(formDataObj);
+    newTableEntries(teamTable,formDataObj["teamName"],formDataObj["issueOne"],formDataObj["description"]);
     return false;
 }
 
-const heroTable = document.getElementById("heroTable");
 
-function newTableEntries(){
+
+
+function newTableEntries(table){
     row = document.createElement("tr")
-    for( let i =0; i <arguments.length;i++){
+    for( let i =1; i <arguments.length;i++){
         box = document.createElement("td")
         box.innerHTML = arguments[i];
         row.append(box)
     }
-    heroTable.append(row)
+    table.append(row)
 
 }
 
-function newInfo(text, data, section) {
-    test = document.createElement('p');
-    test.innerHTML = text + data;
-    section.append(test);
-}
