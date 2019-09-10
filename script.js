@@ -78,6 +78,19 @@ req.onload = () => {
 req.open('GET', 'http://35.222.59.218:9000/heroes');
 req.send();
 
+const requ = new XMLHttpRequest();
+requ.onload = () => {
+    data = JSON.parse(requ.response);
+    console.log(data);
+
+    for(let i=0;i<data.length;i++){
+        let temp = data[i];
+        newTableEntries(teamTable,temp["teamName"],temp["issueOne"],temp["description"]);
+    }
+}
+requ.open('GET', 'http://35.222.59.218:9000/teams');
+requ.send();
+
 function httpRequest(method, url, callback, headers, body) {
     let request = new XMLHttpRequest();
     request.open(method, url);
