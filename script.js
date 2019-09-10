@@ -39,6 +39,8 @@ function handleSubmitHero(form){
     newTableEntries(heroTable,formDataObj["heroName"],formDataObj["issueOne"],formDataObj["description"]);
     return false;
 }
+
+
 function handleSubmitTeam(form){
    
     for (let element of form.elements) {
@@ -53,9 +55,9 @@ function handleSubmitTeam(form){
 
 
 function newTableEntries(table){
-    row = document.createElement("tr");
+    let row = document.createElement("tr");
     for( let i =1; i <arguments.length;i++){
-        box = document.createElement("td");
+        let box = document.createElement("td");
         box.innerHTML = arguments[i];
         row.append(box);
     }
@@ -63,4 +65,27 @@ function newTableEntries(table){
 
 }
 
+const req = new XMLHttpRequest();
+req.onload = () => {
+    data = JSON.parse(req.response);
+    console.log(data);
 
+    for(let i=0;i<data.length;i++){
+        let temp = data[i];
+        newTableEntries(heroTable,temp["heroName"],temp["issueOne"],temp["description"]);
+    }
+}
+req.open('GET', 'http://35.222.59.218:9000/heroes');
+req.send();
+
+function httpRequest(method, url, callback, headers, body) {
+    let request = new XMLHttpRequest();
+    request.open(method, url);
+    request.onload = () => {
+        callback(request);
+    }
+    for (key in headers) {
+        request.setRequestHeader(key, headers[key]);
+    }
+    body ? request.send(body) : request.send();
+}
