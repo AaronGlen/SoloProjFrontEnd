@@ -1,0 +1,62 @@
+#head{
+    border:10px solid silver; 
+    color: grey;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: ivory;
+    text-align: center;
+    height: 200px;
+    font-size: 150Px;
+
+
+}
+#home{
+    background-color: yellow;
+    color: grey;
+    border: 10px solid gold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    width: 400px;
+    height: 200px;
+}
+#heroes{
+    background-color: royalblue;
+    color: whitesmoke;
+    border: 10px solid blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    width: 400px;
+    height: 200px;
+}
+#teams{
+    background-color: lightcoral;
+    color: whitesmoke;
+    border: 10px solid red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    width: 400px;
+    height: 200px;
+}
+
+#heroTable{
+    color:white;
+    background-color:royalblue;
+    font-size: 25px;
+    border: 10px solid blue;
+}
+#teamTable{
+    color:white;
+    background-color:lightcoral;
+    font-size: 25px;
+    border: 10px solid red;
+}
+    
+#titleH{
+     color:white;
+    background-color:royalblue;
+    border:  border-style color;
+    font-size: 100PX;
+}
+#CRUDButton{
+    width: 500px;
+    height: 30px;
+}
