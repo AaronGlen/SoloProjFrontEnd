@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body  onload = "onLoadHero()"> 
 
   <div>
 
@@ -31,9 +31,11 @@
     <input class='form-control' type='text' id = "description">
 
     <button  type="submit" id="CRUDButton"> Create Hero </button>
+    
 
 
   </form>
+ 
   <style>
       table, th, td {
       border: 1px solid black;
@@ -43,6 +45,7 @@
 
 
     <tr>
+      <th>Id</th>
       <th>Hero name</th>
       <th>1st issue</th>
       <th>Description</th>
