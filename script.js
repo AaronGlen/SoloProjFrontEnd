@@ -124,11 +124,34 @@ function registerTeam() {
 
 
 function deleteHero(form) {
-    const req = new XMLHttpRequest();
+    var id  = document.getElementById("heroNameDelete").value;
+     console.log("d");
+
+var req = new XMLHttpRequest();
+    
+    req.open('DELETE', 'http://35.222.59.218:9000/hero/'+id,true);
+
     req.onload = () => {
             location.href = "heros.html";
     };
-    req.open('DELETE', 'http://35.222.59.218:9000/hero/17');
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify());
+   
+    req.send(null);
+    return false;
 }
+
+function deleteTeam(form) {
+    var id  = document.getElementById("teamNameDelete").value;
+     console.log("d");
+
+var req = new XMLHttpRequest();
+    
+    req.open('DELETE', 'http://35.222.59.218:9000/team/'+id,true);
+
+    req.onload = () => {
+            location.href = "teams.html";
+    };
+   
+    req.send(null);
+    return false;
+}
+
