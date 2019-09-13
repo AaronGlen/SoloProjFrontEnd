@@ -158,7 +158,7 @@ function deleteTeam(form) {
 
 let idHero = "";
 
-function getId() {
+function getHeroId() {
     idHero = document.getElementById("heroId").value;
 
     const requ = new XMLHttpRequest();
@@ -194,3 +194,41 @@ function editHero(form) {
 
 
 
+
+
+
+let idTeam = "";
+
+function getTeamId() {
+    idTeam = document.getElementById("teamId").value;
+
+    const requ = new XMLHttpRequest();
+    requ.onload = () => {
+        data = JSON.parse(requ.response);
+        console.log(data);
+
+    }
+    requ.open('GET', 'http://35.222.59.218:9000/team/'+idTeam);
+    requ.send();
+    return false;
+}
+
+function editTeam(form) {
+    let teamInfo = {};
+    for (let element of form.elements) {
+        teamInfo[element.id] = element.value;
+    }
+
+    
+    const req = new XMLHttpRequest();
+    req.onload = () => { 
+        location.href = "teams.html";
+    };
+    console.log(idTeam);
+    req.open('PUT', 'http://35.222.59.218:9000/team/'+idTeam);
+    req.setRequestHeader('Content-Type', 'application/json');
+    console.log("fail but teams the id:"+idTeam);
+    req.send(JSON.stringify(teamInfo));
+    console.log("success?");
+    return false;
+}
