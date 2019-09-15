@@ -157,34 +157,55 @@ function deleteDropBoxHero() {
 
 
 ///////////////////////////////// Delete
-function deleteHero(form) {
-    let id = document.getElementById("deleteHeroId").value;
-    console.log(id);
+// function deleteHero(form) {
+//     let id = document.getElementById("deleteHeroId").value;
+//     console.log(id);
 
-    var req = new XMLHttpRequest();
+//     var req = new XMLHttpRequest();
 
-    req.open('DELETE', 'http://35.222.59.218:9000/hero/' + id, true);
+//     req.open('DELETE', 'http://35.222.59.218:9000/hero/' + id);
 
-    req.onload = () => {
-        location.href = "heros.html";
-    };
+//     req.onload = () => {
+//         location.href = "heros.html";
+//     };
 
-    req.send(null);
-    return false;
+//     req.send();
+//     return false;
+// }
+
+// function deleteTeam(form) {
+//     var id = document.getElementById("deleteTeamId").value;
+//     console.log("d");
+
+//     var req = new XMLHttpRequest();
+//     req.open('DELETE', 'http://35.222.59.218:9000/team/' + id);
+//     req.onload = () => {
+//         location.href = "teams.html";
+//     };
+
+//     req.send();
+//     return false;
+// }
+
+function deleteTeamEntry(request) {
+    location.href = "teams.html";
 }
 
-function deleteTeam(form) {
-    var id = document.getElementById("deleteTeamId").value;
-    console.log("d");
+function deleteTeam(){
+var id = document.getElementById("deleteTeamId").value;
+httpRequest("DELETE", 'http://35.222.59.218:9000/team/'+id, deleteTeamEntry, { "Content-Type": "application/json" } )
+return false;
+}
 
-    var req = new XMLHttpRequest();
-    req.open('DELETE', 'http://35.222.59.218:9000/team/' + id, true);
-    req.onload = () => {
-        location.href = "teams.html";
-    };
 
-    req.send(null);
-    return false;
+function deleteHeroEntry(request) {
+    location.href = "heros.html";
+}
+
+function deleteHero(){
+var id = document.getElementById("deleteHeroId").value;
+httpRequest("DELETE", 'http://35.222.59.218:9000/hero/'+id, deleteHeroEntry, { "Content-Type": "application/json" } )
+return false;
 }
 
 
