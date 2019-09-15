@@ -1,6 +1,4 @@
 
-const heroTable = document.getElementById("heroTable");
-const teamTable = document.getElementById("teamTable");
 function homePage() {
 
     location.href = "home.html";
@@ -25,12 +23,6 @@ function editPage() {
     location.href = "edit.html";
 }
 
-
-
-
-
-
-
 ///////////////////////////// Read
 function newTableEntries(table) {
     let row = document.createElement("tr");
@@ -46,115 +38,125 @@ function onLoadHeroTable(request) {
     data = JSON.parse(request.response);
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-        let temp = data[i];
-        newTableEntries(heroTable, temp["id"], temp["heroName"], temp["issueOne"], temp["description"]);
+        newTableEntries(document.getElementById("heroTable"),data[i].id, data[i].heroName, data[i].issueOne, data[i].description);
     }
 }
 
 function onLoadHero(){
-httpRequest('GET', 'heroes',onLoadHeroTable, {"Content-Type": "application/json"})
+httpRequest('GET', 'http://35.222.59.218:9000/heroes',onLoadHeroTable, {"Content-Type": "application/json"})
 }
 
 function onLoadTeamTable(request) {
     data = JSON.parse(request.response);
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-        let temp = data[i];
-        newTableEntries(teamTable, temp["id"], temp["teamName"], temp["issueOne"], temp["description"]);
+        newTableEntries(document.getElementById("teamTable"),data[i].id, data[i].teamName, data[i].issueOne, data[i].description);
     }
 }
 
 function onLoadTeam(){
-httpRequest('GET', 'teams',onLoadTeamTable, {"Content-Type": "application/json"})
+httpRequest('GET', 'http://35.222.59.218:9000/teams',onLoadTeamTable, {"Content-Type": "application/json"})
 }
 
 
 //////////////////////////////////// Create
 
+// function handleSubmitHero(form) {
+//     let formDataObj = {};
+//     for (let element of form.elements) {
+//         formDataObj[element.id] = element.value;
+//     }
+//     console.log(formDataObj);
+//     register(formDataObj, "hero");
+//     return false;
+// }
 
-const formDataObj = {};
+// function handleSubmitTeam(form) {
+
+//     let formDataObj = {};
+//     for (let element of form.elements) {
+//         formDataObj[element.id] = element.value;
+//     }
+//     console.log(formDataObj);
+//     register(formDataObj, "team");
+//     return false;
+// }
+
+// function register(formDataObj, table) {
+
+//     const req = new XMLHttpRequest();
+//     req.onload = () => {
+//         location.href = table+"s.html";
+//     };
+//     req.open('POST', 'http://35.222.59.218:9000/'+table);
+//     req.setRequestHeader('Content-Type', 'application/json');
+//     req.send(JSON.stringify(formDataObj));
+// }
 
 function handleSubmitHero(form) {
-
+    let formDataObj = {};
     for (let element of form.elements) {
         formDataObj[element.id] = element.value;
     }
     console.log(formDataObj);
-    registerHero();
+    httpRequest("POST", 'http://35.222.59.218:9000/hero', registerHero, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj))
     return false;
 }
-
 
 function handleSubmitTeam(form) {
 
+    let formDataObj = {};
     for (let element of form.elements) {
         formDataObj[element.id] = element.value;
     }
     console.log(formDataObj);
-    registerTeam();
+    httpRequest("POST", 'http://35.222.59.218:9000/team', registerTeam, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj))
     return false;
 }
-
-
 function registerHero() {
-    console.log(formDataObj);
-
-    const req = new XMLHttpRequest();
-    req.onload = () => {
-        location.href = "heros.html";
-    };
-    req.open('POST', 'http://35.222.59.218:9000/hero');
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify(formDataObj));
+    location.href = "heros.html";
 }
 
 function registerTeam() {
+    location.href = "teams.html";
 
-    const req = new XMLHttpRequest();
-    req.onload = () => {
-        location.href = "teams.html";
-    };
-    req.open('POST', 'http://35.222.59.218:9000/team');
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify(formDataObj));
 }
 
-/////////////////// Delete
+/////////////////// Delete DropBox
 
-function deleteDropBoxHero() {
-    const requ = new XMLHttpRequest();
-    requ.onload = () => {
-        data = JSON.parse(requ.response);
-        console.log(data);
 
-        dropBoxEntries(document.getElementById("deleteHeroId"),data );
-    }
-    requ.open('GET', 'http://35.222.59.218:9000/heroes');
-    requ.send();
+
+function dTeamDropBox(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+    dropBoxEntries(document.getElementById("deleteTeamId"), data, "id");
+
+}
+function dHeroDropBox(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+    dropBoxEntries(document.getElementById("deleteHeroId"), data, "id");
+
 }
 
-function deleteDropBoxTeam() {
-    const requ = new XMLHttpRequest();
-    requ.onload = () => {
-        data = JSON.parse(requ.response);
-        console.log(data);
-
-        dropBoxEntries(document.getElementById("deleteTeamId"),data );
-    }
-    requ.open('GET', 'http://35.222.59.218:9000/teams');
-    requ.send();
-}
-
-function dropBoxEntries(select,data){
-    for (let i= 0;i<data.length;i++){
+function dropBoxEntries(select, data, value) {
+    for (let i = 0; i < data.length; i++) {
         let entry = document.createElement("OPTION")
-        entry.innerHTML = data[i].id;
+        entry.innerHTML = data[i][value];
         select.append(entry);
     }
 
 }
 
+function deleteDropBoxTeam() {
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', dTeamDropBox, { "Content-Type": "application/json" })
+}
+function deleteDropBoxHero() {
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', dHeroDropBox, { "Content-Type": "application/json" })
+}
 
+
+///////////////////////////////// Delete
 function deleteHero(form) {
     let id = document.getElementById("deleteHeroId").value;
     console.log(id);
@@ -266,7 +268,7 @@ function editTeam(form) {
 
 function httpRequest(method, url, callback, headers, body) {
     let request = new XMLHttpRequest();
-    request.open(method,'http://35.222.59.218:9000/'+ url);
+    request.open(method, url);
     request.onload = () => {
         callback(request);
     }
