@@ -8,7 +8,7 @@
 
 </head>
 
-<body onload = "onLoadTeam()">
+<body onload = "onLoadTeam();deleteDropBoxTeam()">
 
 
   <div>
@@ -17,8 +17,8 @@
     <button onclick='heroPage()' id='heroes'> Heroes</button>
     <button id='teams'>Teams</button>
   </div>
-  <h1> Create a new Team</h1>
-  <form onsubmit="return handleSubmitTeam(this)" id ="teamForm">
+  
+  <!-- <form onsubmit="return handleSubmitTeam(this)" id ="teamForm">
 
     <h2> Team name: </h2>
     <input class='form-control' type='text' id ="teamName">
@@ -32,7 +32,70 @@
     <button  type="submit" id="CRUDButton"> Create Team </button>
 
 
-  </form>
+  </form> -->
+
+
+
+      
+    
+    
+    <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form onsubmit="return handleSubmitTeam(this)" id ="teamForm">
+    
+                  <h2> Team name: </h2>
+                  <input class='form-control' type='text' id ="teamName">
+              
+                  <h2> 1st issue appeared or first main apperance: </h2>
+                  <input class='form-control' type='text' id = "issueOne">
+              
+                  <h2>  Description of team (e.g. members, major storylines, etc):</h2>
+                  <input class='form-control' type='text' id = "description">
+                  <button  type="submit" class="btn btn-danger"> Create Team </button>
+              </form>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+  </table>
+  <table id = "buttonTable" style ="width:100%">
+    <tr>
+      <th>
+        <div>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teamModal">
+              Create Team
+            </button>
+        </div>
+      </th>
+      <th>edit</th>
+      <th>
+        <div>
+          <form onsubmit="return deleteTeam(this)" id="deleteTeamForm">
+              <div class="container">
+              <select class='rounded' id="deleteTeamId"></select>
+              <button type = "submit" id="deleteTeamButton" class="btn btn-danger"> Delete Team</button>
+              </div>
+            </form>
+        </div>
+      </th>
+    </tr>
+
+  </table>
+    
+    
+    
 <style>
   table, th, td {
   border: 1px solid black;
@@ -49,18 +112,7 @@
     </tr>
   
 
-  </table>
-  <table id = "buttonTable" style ="width:100%">
-    <tr>
-      <th>
-        <button id = "CRUDButton" onclick="deletePage()">Delete Entries</button>
-      </th>
-      <th>
-        <button id ="CRUDButton" onclick = "editPage()"> Edit Entries</button>
-      </th>
-    </tr>
 
-  </table>
   <script src='script.js'></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

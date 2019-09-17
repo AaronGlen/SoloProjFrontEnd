@@ -157,35 +157,7 @@ function deleteDropBoxHero() {
 
 
 ///////////////////////////////// Delete
-// function deleteHero(form) {
-//     let id = document.getElementById("deleteHeroId").value;
-//     console.log(id);
 
-//     var req = new XMLHttpRequest();
-
-//     req.open('DELETE', 'http://35.222.59.218:9000/hero/' + id);
-
-//     req.onload = () => {
-//         location.href = "heros.html";
-//     };
-
-//     req.send();
-//     return false;
-// }
-
-// function deleteTeam(form) {
-//     var id = document.getElementById("deleteTeamId").value;
-//     console.log("d");
-
-//     var req = new XMLHttpRequest();
-//     req.open('DELETE', 'http://35.222.59.218:9000/team/' + id);
-//     req.onload = () => {
-//         location.href = "teams.html";
-//     };
-
-//     req.send();
-//     return false;
-// }
 
 function deleteTeamEntry(request) {
     location.href = "teams.html";
