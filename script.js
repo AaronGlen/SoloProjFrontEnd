@@ -94,14 +94,28 @@ function registerTeam() {
 
 
 
-function dTeamDropBox(request) {
+function teamDropBox(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+    dropBoxEntries(document.getElementById("teamId"), data, "id");
+
+}
+
+function deleteTeamDropBox(request) {
     data = JSON.parse(request.response);
     console.log(data);
     dropBoxEntries(document.getElementById("deleteTeamId"), data, "id");
 
 }
 
-function dHeroDropBox(request) {
+function heroDropBox(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+    dropBoxEntries(document.getElementById("heroId"), data, "id");
+
+}
+
+function deleteHeroDropBox(request) {
     data = JSON.parse(request.response);
     console.log(data);
     dropBoxEntries(document.getElementById("deleteHeroId"), data, "id");
@@ -111,25 +125,26 @@ function dHeroDropBox(request) {
 function dropBoxEntries(select, data, value) {
     for (let i = 0; i < data.length; i++) {
         let entry = document.createElement("OPTION")
+        entry.innerHTML = data[i][value];
         select.append(entry);
     }
 }
 
-function deleteDropBoxTeam() {
-    httpRequest('GET', 'http://35.222.59.218:9000/teams', dTeamDropBox, { "Content-Type": "application/json" })
+function dropBoxTeam() {
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', deleteTeamDropBox, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', teamDropBox, { "Content-Type": "application/json" })
 }
 
-function deleteDropBoxHero() {
-    httpRequest('GET', 'http://35.222.59.218:9000/heroes', dHeroDropBox, { "Content-Type": "application/json" })
+
+function dropBoxHero() {
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', deleteHeroDropBox, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', heroDropBox, { "Content-Type": "application/json" })
 }
 
 
 ///////////////////////////////// Delete
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 1270912abbf730f21435d1906cd54b4f15fba806
 function deleteTeamEntry(request) {
     location.href = "teams.html";
 }

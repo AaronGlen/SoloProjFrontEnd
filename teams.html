@@ -1,128 +1,142 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel='stylesheet' href='paint.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='paint.css'>
 
 
 </head>
 
-<body onload = "onLoadTeam();deleteDropBoxTeam()">
+<body onload="onLoadTeam();dropBoxTeam()">
 
 
-  <div>
+    <div>
 
-    <button onclick='homePage()' id='home'> Home</button>
-    <button onclick='heroPage()' id='heroes'> Heroes</button>
-    <button id='teams'>Teams</button>
-  </div>
-  
-  <!-- <form onsubmit="return handleSubmitTeam(this)" id ="teamForm">
-
-    <h2> Team name: </h2>
-    <input class='form-control' type='text' id ="teamName">
-
-    <h2> 1st issue appeared or first main apperance: </h2>
-    <input class='form-control' type='text' id ="issueOne">
-
-    <h2> Description of team (e.g. members, major storylines, etc):</h2>
-    <input class='form-control' type='text' id="description">
-
-    <button  type="submit" id="CRUDButton"> Create Team </button>
-
-
-  </form> -->
-
-
-
-      
-    
-    
-    <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <form onsubmit="return handleSubmitTeam(this)" id ="teamForm">
-    
-                  <h2> Team name: </h2>
-                  <input class='form-control' type='text' id ="teamName">
-              
-                  <h2> 1st issue appeared or first main apperance: </h2>
-                  <input class='form-control' type='text' id = "issueOne">
-              
-                  <h2>  Description of team (e.g. members, major storylines, etc):</h2>
-                  <input class='form-control' type='text' id = "description">
-                  <button  type="submit" class="btn btn-danger"> Create Team </button>
-              </form>
-
-          </div>
-          
-        </div>
-      </div>
+        <button onclick='homePage()' id='home'> Home</button>
+        <button onclick='heroPage()' id='heroes'> Heroes</button>
+        <button id='teams'>Teams</button>
     </div>
 
 
-  </table>
-  <table id = "buttonTable" style ="width:100%">
-    <tr>
-      <th>
-        <div>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teamModal">
+    <div class="modal fade" id="teamCreateModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return handleSubmitTeam(this)" id="teamForm">
+
+                        <h2> Team name: </h2>
+                        <input class='form-control' type='text' id="teamName">
+
+                        <h2> 1st issue appeared or first main apperance: </h2>
+                        <input class='form-control' type='text' id="issueOne">
+
+                        <h2> Description of team (e.g. members, major storylines, etc):</h2>
+                        <input class='form-control' type='text' id="description">
+                        <button type="submit" class="btn btn-danger"> Create Team </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="teamUpdateModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return editTeam(this)" id="teamEditForm">
+
+                        <h2> Team name: </h2>
+                        <input class='form-control' type='text' id="teamName">
+
+                        <h2> 1st issue appeared or first main apperance: </h2>
+                        <input class='form-control' type='text' id="issueOne">
+
+                        <h2> Description of team (e.g. members, major storylines, etc):</h2>
+                        <input class='form-control' type='text' id="description">
+
+                        <button type="submit" class="btn btn-danger"> Update Team </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </table>
+    <table id="buttonTable" style="width:100%">
+        <tr>
+            <th>
+                <div>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teamCreateModal">
               Create Team
             </button>
-        </div>
-      </th>
-      <th>edit</th>
-      <th>
-        <div>
-          <form onsubmit="return deleteTeam(this)" id="deleteTeamForm">
-              <div class="container">
-              <select class='rounded' id="deleteTeamId"></select>
-              <button type = "submit" id="deleteTeamButton" class="btn btn-danger"> Delete Team</button>
-              </div>
-            </form>
-        </div>
-      </th>
-    </tr>
+                </div>
+            </th>
+            <th>
+                <form onsubmit="return getTeamId(this)" id="teamIdEditForm">
 
-  </table>
-    
-    
-    
-<style>
-  table, th, td {
-  border: 1px solid black;
-}
-</style>
+                    <select class="rounded" id="teamId"></select>
+                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#teamUpdateModal"> Update Team </button>
+                </form>
+            </th>
+            <th>
+                <div>
+                    <form onsubmit="return deleteTeam(this)" id="deleteTeamForm">
+                        <div class="container">
+                            <select class='rounded' id="deleteTeamId"></select>
+                            <button type="submit" id="deleteTeamButton" class="btn btn-danger"> Delete Team</button>
+                        </div>
+                    </form>
+                </div>
+            </th>
+        </tr>
 
-  <table id='teamTable' style="width:100%">
-
-    <tr>
-      <th> Id</th>
-      <th>Team name</th>
-      <th>1st issue</th>
-      <th>Description</th>
-    </tr>
-  
+    </table>
 
 
-  <script src='script.js'></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <table id='teamTable' style="width:100%">
+
+        <tr>
+            <th> Id</th>
+            <th>Team name</th>
+            <th>1st issue</th>
+            <th>Description</th>
+        </tr>
+
+
+
+        <script src='script.js'></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
