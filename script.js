@@ -180,19 +180,16 @@ function getHeroId() {
     return false;
 }
 
+function editH() {
+    location.href = "heros.html";
+}
+
 function editHero(form) {
     let heroInfo = {};
     for (let element of form.elements) {
         heroInfo[element.id] = element.value;
     }
-    const req = new XMLHttpRequest();
-    req.onload = () => {
-        location.href = "heros.html";
-    };
-    console.log(idHero);
-    req.open('PUT', 'http://35.222.59.218:9000/hero/' + idHero);
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify(heroInfo));
+    httpRequest("PUT", 'http://35.222.59.218:9000/hero/' + idHero, editH, { 'Content-Type': 'application/json' }, JSON.stringify(heroInfo))
     return false;
 }
 
@@ -211,19 +208,16 @@ function getTeamId() {
     return false;
 }
 
+function editT() {
+    location.href = "teams.html";
+}
+
 function editTeam(form) {
     let teamInfo = {};
     for (let element of form.elements) {
         teamInfo[element.id] = element.value;
     }
-    const req = new XMLHttpRequest();
-    req.onload = () => {
-        location.href = "teams.html";
-    };
-    console.log(idTeam);
-    req.open('PUT', 'http://35.222.59.218:9000/team/' + idTeam);
-    req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify(teamInfo));
+    httpRequest("PUT", 'http://35.222.59.218:9000/team/' + idTeam, editT, { 'Content-Type': 'application/json' }, JSON.stringify(teamInfo))
     return false;
 }
 //////////////////// httpRequests
