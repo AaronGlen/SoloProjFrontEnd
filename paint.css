@@ -1,15 +1,14 @@
-#head{
-    border:10px solid silver; 
+#head {
+    border: 10px solid silver;
     color: grey;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: ivory;
     text-align: center;
     height: 200px;
     font-size: 150Px;
-
-
 }
-#home{
+
+#home {
     background-color: yellow;
     color: grey;
     border: 10px solid gold;
@@ -18,7 +17,8 @@
     width: 400px;
     height: 200px;
 }
-#heroes{
+
+#heroes {
     background-color: royalblue;
     color: whitesmoke;
     border: 10px solid blue;
@@ -27,7 +27,8 @@
     width: 400px;
     height: 200px;
 }
-#teams{
+
+#teams {
     background-color: lightcoral;
     color: whitesmoke;
     border: 10px solid red;
@@ -37,30 +38,32 @@
     height: 200px;
 }
 
-#heroTable{
-    color:white;
-    background-color:royalblue;
+#heroTable {
+    color: white;
+    background-color: royalblue;
     font-size: 25px;
     border: 10px solid blue;
 }
-#teamTable{
-    color:white;
-    background-color:lightcoral;
+
+#teamTable {
+    color: white;
+    background-color: lightcoral;
     font-size: 25px;
     border: 10px solid red;
 }
-    
-#titleH{
-     color:white;
-    background-color:royalblue;
-    border:  border-style color;
+
+#titleH {
+    color: white;
+    background-color: royalblue;
+    border: border-style color;
     font-size: 100PX;
 }
-#CRUDButton{
+
+#CRUDButton {
     width: 500px;
     height: 30px;
 }
+
 #cells {
     border: 1px solid black;
-  }
-
+}
