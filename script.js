@@ -168,16 +168,15 @@ function deleteHero() {
 ////////////////////////// Update
 let idHero = "";
 
+function heroId(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+}
+
+
 function getHeroId() {
     idHero = document.getElementById("heroId").value;
-
-    const requ = new XMLHttpRequest();
-    requ.onload = () => {
-        data = JSON.parse(requ.response);
-        console.log(data);
-    }
-    requ.open('GET', 'http://35.222.59.218:9000/hero/' + idHero);
-    requ.send();
+    httpRequest("GET", 'http://35.222.59.218:9000/hero/' + idHero, heroId, { "Content-Type": "application/json" })
     return false;
 }
 
@@ -196,17 +195,19 @@ function editHero(form) {
     req.send(JSON.stringify(heroInfo));
     return false;
 }
+
+
 let idTeam = "";
+
+function teamId(request) {
+    data = JSON.parse(request.response);
+    console.log(data);
+}
+
 
 function getTeamId() {
     idTeam = document.getElementById("teamId").value;
-    const requ = new XMLHttpRequest();
-    requ.onload = () => {
-        data = JSON.parse(requ.response);
-        console.log(data);
-    }
-    requ.open('GET', 'http://35.222.59.218:9000/team/' + idTeam);
-    requ.send();
+    httpRequest("GET", 'http://35.222.59.218:9000/team/' + idTeam, teamId, { "Content-Type": "application/json" })
     return false;
 }
 
