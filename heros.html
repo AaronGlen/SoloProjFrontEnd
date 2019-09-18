@@ -18,23 +18,45 @@
 
   </div>
 
-  <h1> Create a new Hero</h1>
-  <form onsubmit="return handleSubmitHero(this)" id ="heroForm">
+ 
 
-    <h2> Hero name: </h2>
-    <input class='form-control' type='text' id ="heroName">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#heroModal">
+  Create Hero
+</button>
 
-    <h2> 1st issue appeared or first main apperance: </h2>
-    <input class='form-control' type='text' id = "issueOne">
+<div class="modal fade" id="heroModal" tabindex="-1" role="dialog" aria-labelledby="heroModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="heroModalLabel">Create Hero</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form onsubmit="return handleSubmitHero(this)" id ="heroForm">
 
-    <h2> Description of hero (e.g. powers, charactor traits, etc):</h2>
-    <input class='form-control' type='text' id = "description">
+              <h2> Hero name: </h2>
+              <input class='form-control' type='text' id ="heroName">
+          
+              <h2> 1st issue appeared or first main apperance: </h2>
+              <input class='form-control' type='text' id = "issueOne">
+          
+              <h2> Description of hero (e.g. powers, charactor traits, etc):</h2>
+              <input class='form-control' type='text' id = "description">
+      </div>
+      <div class="modal-footer">
+       
+        <button  type="submit" class="btn btn-primary"> Create Hero </button>
 
-    <button  type="submit" id="CRUDButton"> Create Hero </button>
-    
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  </form>
+
+  
  
   <style>
       table, th, td {

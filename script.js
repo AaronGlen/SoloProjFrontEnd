@@ -125,6 +125,11 @@ function deleteDropBoxHero() {
 
 
 ///////////////////////////////// Delete
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1270912abbf730f21435d1906cd54b4f15fba806
 function deleteTeamEntry(request) {
     location.href = "teams.html";
 }
