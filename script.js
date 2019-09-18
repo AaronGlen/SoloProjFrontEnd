@@ -1,4 +1,3 @@
-
 function homePage() {
 
     location.href = "home.html";
@@ -18,6 +17,7 @@ function deletePage() {
 
     location.href = "delete.html";
 }
+
 function editPage() {
 
     location.href = "edit.html";
@@ -32,67 +32,34 @@ function newTableEntries(table) {
         row.append(box);
     }
     table.append(row);
- }
+}
 
 function onLoadHeroTable(request) {
     data = JSON.parse(request.response);
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-        newTableEntries(document.getElementById("heroTable"),data[i].id, data[i].heroName, data[i].issueOne, data[i].description);
+        newTableEntries(document.getElementById("heroTable"), data[i].id, data[i].heroName, data[i].issueOne, data[i].description);
     }
 }
 
-function onLoadHero(){
-httpRequest('GET', 'http://35.222.59.218:9000/heroes',onLoadHeroTable, {"Content-Type": "application/json"})
+function onLoadHero() {
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', onLoadHeroTable, { "Content-Type": "application/json" })
 }
 
 function onLoadTeamTable(request) {
     data = JSON.parse(request.response);
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-        newTableEntries(document.getElementById("teamTable"),data[i].id, data[i].teamName, data[i].issueOne, data[i].description);
+        newTableEntries(document.getElementById("teamTable"), data[i].id, data[i].teamName, data[i].issueOne, data[i].description);
     }
 }
 
-function onLoadTeam(){
-httpRequest('GET', 'http://35.222.59.218:9000/teams',onLoadTeamTable, {"Content-Type": "application/json"})
+function onLoadTeam() {
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', onLoadTeamTable, { "Content-Type": "application/json" })
 }
 
 
 //////////////////////////////////// Create
-
-// function handleSubmitHero(form) {
-//     let formDataObj = {};
-//     for (let element of form.elements) {
-//         formDataObj[element.id] = element.value;
-//     }
-//     console.log(formDataObj);
-//     register(formDataObj, "hero");
-//     return false;
-// }
-
-// function handleSubmitTeam(form) {
-
-//     let formDataObj = {};
-//     for (let element of form.elements) {
-//         formDataObj[element.id] = element.value;
-//     }
-//     console.log(formDataObj);
-//     register(formDataObj, "team");
-//     return false;
-// }
-
-// function register(formDataObj, table) {
-
-//     const req = new XMLHttpRequest();
-//     req.onload = () => {
-//         location.href = table+"s.html";
-//     };
-//     req.open('POST', 'http://35.222.59.218:9000/'+table);
-//     req.setRequestHeader('Content-Type', 'application/json');
-//     req.send(JSON.stringify(formDataObj));
-// }
-
 function handleSubmitHero(form) {
     let formDataObj = {};
     for (let element of form.elements) {
@@ -113,6 +80,7 @@ function handleSubmitTeam(form) {
     httpRequest("POST", 'http://35.222.59.218:9000/team', registerTeam, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj))
     return false;
 }
+
 function registerHero() {
     location.href = "heros.html";
 }
@@ -132,6 +100,7 @@ function dTeamDropBox(request) {
     dropBoxEntries(document.getElementById("deleteTeamId"), data, "id");
 
 }
+
 function dHeroDropBox(request) {
     data = JSON.parse(request.response);
     console.log(data);
@@ -142,59 +111,28 @@ function dHeroDropBox(request) {
 function dropBoxEntries(select, data, value) {
     for (let i = 0; i < data.length; i++) {
         let entry = document.createElement("OPTION")
-        entry.innerHTML = data[i][value];
         select.append(entry);
     }
-
 }
 
 function deleteDropBoxTeam() {
     httpRequest('GET', 'http://35.222.59.218:9000/teams', dTeamDropBox, { "Content-Type": "application/json" })
 }
+
 function deleteDropBoxHero() {
     httpRequest('GET', 'http://35.222.59.218:9000/heroes', dHeroDropBox, { "Content-Type": "application/json" })
 }
 
 
 ///////////////////////////////// Delete
-// function deleteHero(form) {
-//     let id = document.getElementById("deleteHeroId").value;
-//     console.log(id);
-
-//     var req = new XMLHttpRequest();
-
-//     req.open('DELETE', 'http://35.222.59.218:9000/hero/' + id);
-
-//     req.onload = () => {
-//         location.href = "heros.html";
-//     };
-
-//     req.send();
-//     return false;
-// }
-
-// function deleteTeam(form) {
-//     var id = document.getElementById("deleteTeamId").value;
-//     console.log("d");
-
-//     var req = new XMLHttpRequest();
-//     req.open('DELETE', 'http://35.222.59.218:9000/team/' + id);
-//     req.onload = () => {
-//         location.href = "teams.html";
-//     };
-
-//     req.send();
-//     return false;
-// }
-
 function deleteTeamEntry(request) {
     location.href = "teams.html";
 }
 
-function deleteTeam(){
-var id = document.getElementById("deleteTeamId").value;
-httpRequest("DELETE", 'http://35.222.59.218:9000/team/'+id, deleteTeamEntry, { "Content-Type": "application/json" } )
-return false;
+function deleteTeam() {
+    var id = document.getElementById("deleteTeamId").value;
+    httpRequest("DELETE", 'http://35.222.59.218:9000/team/' + id, deleteTeamEntry, { "Content-Type": "application/json" })
+    return false;
 }
 
 
@@ -202,16 +140,12 @@ function deleteHeroEntry(request) {
     location.href = "heros.html";
 }
 
-function deleteHero(){
-var id = document.getElementById("deleteHeroId").value;
-httpRequest("DELETE", 'http://35.222.59.218:9000/hero/'+id, deleteHeroEntry, { "Content-Type": "application/json" } )
-return false;
+function deleteHero() {
+    var id = document.getElementById("deleteHeroId").value;
+    httpRequest("DELETE", 'http://35.222.59.218:9000/hero/' + id, deleteHeroEntry, { "Content-Type": "application/json" })
+    return false;
 }
-
-
-
 ////////////////////////// Update
-
 let idHero = "";
 
 function getHeroId() {
@@ -221,9 +155,8 @@ function getHeroId() {
     requ.onload = () => {
         data = JSON.parse(requ.response);
         console.log(data);
-
     }
-    requ.open('GET', 'http://35.222.59.218:9000/hero/'+idHero);
+    requ.open('GET', 'http://35.222.59.218:9000/hero/' + idHero);
     requ.send();
     return false;
 }
@@ -233,35 +166,26 @@ function editHero(form) {
     for (let element of form.elements) {
         heroInfo[element.id] = element.value;
     }
-
-    
     const req = new XMLHttpRequest();
-    req.onload = () => { 
+    req.onload = () => {
         location.href = "heros.html";
     };
     console.log(idHero);
-    req.open('PUT', 'http://35.222.59.218:9000/hero/'+idHero);
+    req.open('PUT', 'http://35.222.59.218:9000/hero/' + idHero);
     req.setRequestHeader('Content-Type', 'application/json');
-  
     req.send(JSON.stringify(heroInfo));
-    
     return false;
 }
-
-
-
 let idTeam = "";
 
 function getTeamId() {
     idTeam = document.getElementById("teamId").value;
-
     const requ = new XMLHttpRequest();
     requ.onload = () => {
         data = JSON.parse(requ.response);
         console.log(data);
-
     }
-    requ.open('GET', 'http://35.222.59.218:9000/team/'+idTeam);
+    requ.open('GET', 'http://35.222.59.218:9000/team/' + idTeam);
     requ.send();
     return false;
 }
@@ -271,18 +195,14 @@ function editTeam(form) {
     for (let element of form.elements) {
         teamInfo[element.id] = element.value;
     }
-
-    
     const req = new XMLHttpRequest();
-    req.onload = () => { 
+    req.onload = () => {
         location.href = "teams.html";
     };
     console.log(idTeam);
-    req.open('PUT', 'http://35.222.59.218:9000/team/'+idTeam);
+    req.open('PUT', 'http://35.222.59.218:9000/team/' + idTeam);
     req.setRequestHeader('Content-Type', 'application/json');
-    
     req.send(JSON.stringify(teamInfo));
-  
     return false;
 }
 //////////////////// httpRequests
@@ -297,4 +217,4 @@ function httpRequest(method, url, callback, headers, body) {
         request.setRequestHeader(key, headers[key]);
     }
     body ? request.send(body) : request.send();
-    }
+}
