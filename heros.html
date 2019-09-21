@@ -8,15 +8,29 @@
 </head>
 
 <body onload="onLoadHero();dropBoxHero()">
+       
     <div class="container-fluid">
-        <div>
+            <div>
 
-            <button onclick='homePage()' id='home'> Home</button>
-            <button id='heroes'>Heroes</button>
-            <button onclick='teamPage()' id='teams'> Teams</button>
+                    <h1 id='head'>
+                        Heroes and Teams
+                    </h1>
+                </div>
 
-        </div>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="heros.html">Heroes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  
+                </button>
 
+                <a class="navbar-brand" href="teams.html">Teams</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+        </nav>
 
 
 
@@ -113,7 +127,7 @@
             </tr>
 
         </table>
-
+    
 
         <style>
             table,
@@ -122,6 +136,11 @@
                 border: 1px solid black;
             }
         </style>
+
+    <div>
+        <p>
+        </p>
+    </div>
         <table id='heroTable' style="width:100%">
 
 
