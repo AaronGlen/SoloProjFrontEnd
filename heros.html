@@ -92,6 +92,7 @@
             </div>
         </div>
 
+      
 
 
         <div class="container">
@@ -102,18 +103,18 @@
                         Create New Hero
                     </button>
                 </div>
+              
 
                 <div class="col-md-3 offset-md-1">
-                    <form onsubmit="return getHeroId(this)" id="heroIdEditForm">
+                    <form onsubmit="return getHeroId()" id="heroIdEditForm">
 
-                        <select class="rounded" id="heroId"></select>
-                        <button type="submit" class="btn btn-primary" data-toggle="modal"
-                            data-target="#heroUpdateModal"> Update Hero </button>
+                        <select class="rounded" id="updateHeroId"></select>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#heroUpdateModal"> Update Hero </button>
                     </form>
                 </div>
 
                 <div class="col-md-2 offset-md-0">
-                    <form onsubmit="return deleteHero(this)" id="deleteHeroForm">
+                    <form onsubmit="return deleteHero()" id="deleteHeroForm">
 
                         <select class='rounded' id="deleteHeroId"></select>
                         <button type="submit" id="deleteHeroButton" class="btn btn-primary"> Delete Hero</button>
