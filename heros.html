@@ -1,47 +1,42 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='paint.css'>
 
 
 </head>
 
 <body onload="onLoadHero();dropBoxHero()">
-       
+
     <div class="container-fluid">
-            <div>
-
-                    <h1 id='head'>
-                        Heroes and Teams
-                    </h1>
-                </div>
-
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="heros.html">Heroes</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                  
-                </button>
-
-                <a class="navbar-brand" href="teams.html">Teams</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-        
-        </nav>
 
 
 
-        <div class="modal fade" id="heroCreateModal" tabindex="-1" role="dialog" aria-labelledby="heroModalLabel" aria-hidden="true">
+
+
+        <h1 id='head'>
+            Heroes and Teams
+        </h1>
+
+
+        <div class="btn-group">
+            <button onclick="heroPage()" type="button" class="btn btn-primary">Heroes</button>
+            <button onclick="teamPage()" type="button" class="btn btn-danger">Teams</button>
+        </div>
+
+
+
+        <div class="modal fade" id="heroCreateModal" tabindex="-1" role="dialog" aria-labelledby="heroModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="heroModalLabel">Create Hero</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <form onsubmit="return handleSubmitHero(this)" id="heroForm">
@@ -64,14 +59,15 @@
         </div>
 
 
-        <div class="modal fade" id="heroUpdateModal" tabindex="-1" role="dialog" aria-labelledby="heroModalLabel" aria-hidden="true">
+        <div class="modal fade" id="heroUpdateModal" tabindex="-1" role="dialog" aria-labelledby="heroModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="heroModalLabel">Create Hero</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <form onsubmit="return editHero(this)" id="heroEditForm">
@@ -98,36 +94,36 @@
 
 
 
-        <table id="buttonTable" style="width:100%">
-            <tr>
-                <th>
-                    <div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#heroCreateModal">
-        Create Hero
-      </button>
-                    </div>
-                </th>
-                <th>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#heroCreateModal">
+                        Create New Hero
+                    </button>
+                </div>
+
+                <div class="col-md-3 offset-md-1">
                     <form onsubmit="return getHeroId(this)" id="heroIdEditForm">
 
                         <select class="rounded" id="heroId"></select>
-                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#heroUpdateModal"> Update Hero </button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal"
+                            data-target="#heroUpdateModal"> Update Hero </button>
                     </form>
-                </th>
-                <th>
-                    <div>
-                        <form onsubmit="return deleteHero(this)" id="deleteHeroForm">
-                            <div class="container">
-                                <select class='rounded' id="deleteHeroId"></select>
-                                <button type="submit" id="deleteHeroButton" class="btn btn-primary"> Delete Hero</button>
-                            </div>
-                        </form>
-                    </div>
-                </th>
-            </tr>
+                </div>
 
-        </table>
-    
+                <div class="col-md-2 offset-md-0">
+                    <form onsubmit="return deleteHero(this)" id="deleteHeroForm">
+
+                        <select class='rounded' id="deleteHeroId"></select>
+                        <button type="submit" id="deleteHeroButton" class="btn btn-primary"> Delete Hero</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
 
         <style>
             table,
@@ -137,10 +133,10 @@
             }
         </style>
 
-    <div>
-        <p>
-        </p>
-    </div>
+        <div>
+            <p>
+            </p>
+        </div>
         <table id='heroTable' style="width:100%">
 
 
@@ -158,9 +154,15 @@
         </table>
     </div>
     <script src='script.js'></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 

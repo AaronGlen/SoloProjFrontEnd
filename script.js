@@ -1,6 +1,3 @@
-function homePage() {
-    location.href = "home.html";
-}
 
 function heroPage() {
     location.href = "heros.html";
@@ -10,13 +7,6 @@ function teamPage() {
     location.href = "teams.html";
 }
 
-function deletePage() {
-    location.href = "delete.html";
-}
-
-function editPage() {
-    location.href = "edit.html";
-}
 ///////////////////////////// Read
 function newTableEntries(table) {
     let row = document.createElement("tr");

@@ -4,19 +4,10 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: ivory;
     text-align: center;
-    height: 200px;
+    
     font-size: 150Px;
 }
 
-#home {
-    background-color: yellow;
-    color: grey;
-    border: 10px solid gold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 100px;
-    width: 400px;
-    height: 200px;
-}
 
 #heroes {
     background-color: royalblue;
@@ -43,6 +34,7 @@
     background-color: royalblue;
     font-size: 25px;
     border: 10px solid blue;
+    
 }
 
 #teamTable {
@@ -51,19 +43,13 @@
     font-size: 25px;
     border: 10px solid red;
 }
+.th{
+    border: 1px solid white
+}
 
 #titleH {
     color: white;
     background-color: royalblue;
     border: border-style color;
     font-size: 100PX;
-}
-
-#CRUDButton {
-    width: 500px;
-    height: 30px;
-}
-
-#cells {
-    border: 1px solid black;
 }
