@@ -27,13 +27,14 @@
                         <form onsubmit="return handleSubmitTeam(this)" id="teamForm">
 
                             <h2> Team name: </h2>
-                            <input class='form-control' type='text' id="teamName">
+                            <input class='form-control' type='text' id="teamName" placeholder="e.g. Avengers">
 
                             <h2> 1st issue appeared or first main apperance: </h2>
-                            <input class='form-control' type='text' id="issueOne">
+                            <input class='form-control' type='text' id="issueOne" placeholder="e.g. Avengers#1">
 
                             <h2> Description of team (e.g. members, major storylines, etc):</h2>
-                            <input class='form-control' type='text' id="description">
+                            <input class='form-control' type='text' id="description"
+                                placeholder="e.g. the worlds strongest heros">
                             <button type="submit" class="btn btn-danger"> Create Team </button>
                         </form>
 
@@ -76,51 +77,54 @@
                 </div>
             </div>
         </div>
-    
 
-            <h1 id='head'>
-                Heroes and Teams
-            </h1>
-        
+
+        <h1 id='head'>
+            Heroes and Teams
+        </h1>
+
 
         <div class="btn-group">
-            
-                <button onclick="heroPage()" type="button" class="btn btn-primary">Heroes</button>
-                <button onclick="teamPage()" type="button" class="btn btn-danger">Teams</button>
-            
-            
+
+            <button onclick="heroPage()" type="button" class="btn btn-primary">Heroes</button>
+            <button onclick="teamPage()" type="button" class="btn btn-danger">Teams</button>
+
+
         </div>
         <div class="container">
-                <div class="row">
-    
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teamCreateModal">
-                            Create New Team
-                        </button>
-                    </div>
-    
-                    <div class="col-md-3 offset-md-1">
-                        <form onsubmit="return getTeamId(this)" id="teamIdEditForm">
-    
-                            <select class="rounded" id="updateTeamId"></select>
-                            <button type="submit" class="btn btn-danger" data-toggle="modal"
-                                data-target="#teamUpdateModal"> Update Team </button>
-                        </form>
-                    </div>
-    
-                    <div class="col-md-2 offset-md-0">
-                        <form onsubmit="return deleteTeam(this)" id="deleteTeamForm">
-    
-                            <select class='rounded' id="deleteTeamId"></select>
-                            <button type="submit" id="deleteTeamButton" class="btn btn-danger"> Delete Team</button>
-    
-                        </form>
-                    </div>
-    
+            <div class="row">
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#teamCreateModal">
+                        Create New Team
+                    </button>
                 </div>
+
+                <div class="col-md-3 offset-md-1">
+                    <form onsubmit="return getTeamId(this)" id="teamIdEditForm">
+
+                        <select class="rounded" id="updateTeamId"></select>
+                        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#teamUpdateModal">
+                            Update Team </button>
+                    </form>
+                </div>
+
+                <div class="col-md-2 offset-md-0">
+                    <form onsubmit="return deleteTeam(this)" id="deleteTeamForm">
+
+                        <select class='rounded' id="deleteTeamId"></select>
+                        <button type="submit" id="deleteTeamButton" class="btn btn-danger"> Delete Team</button>
+
+                    </form>
+                </div>
+
             </div>
+        </div>
 
+        <div>
+            <input type="text" id="nameTeam" onkeyup="searchTeams()" placeholder="Search for Team by name...">
 
+        </div>
         <style>
             table,
             th,
@@ -141,6 +145,7 @@
                 <th>1st issue</th>
                 <th>Description</th>
             </tr>
+           
 
         </table>
 
