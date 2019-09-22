@@ -50,7 +50,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="teamModalLabel">Create Team</h5>
+                        <h5 class="modal-title" id="teamModalLabel">Update Team</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -59,13 +59,13 @@
                         <form onsubmit="return editTeam(this)" id="teamEditForm">
 
                             <h2> Team name: </h2>
-                            <input class='form-control' type='text' id="teamName">
+                            <input class='form-control' type='text' id="teamName" placeholder="e.g. Avengers">
 
                             <h2> 1st issue appeared or first main apperance: </h2>
-                            <input class='form-control' type='text' id="issueOne">
+                            <input class='form-control' type='text' id="issueOne" placeholder="e.g. Avengers#1">
 
                             <h2> Description of team (e.g. members, major storylines, etc):</h2>
-                            <input class='form-control' type='text' id="description">
+                            <input class='form-control' type='text' id="description" placeholder="e.g. the worlds strongest heros">
 
                             <button type="submit" class="btn btn-danger"> Update Team </button>
 
@@ -125,13 +125,7 @@
             <input type="text" id="nameTeam" onkeyup="searchTeams()" placeholder="Search for Team by name...">
 
         </div>
-        <style>
-            table,
-            th,
-            td {
-                border: 1px solid black;
-            }
-        </style>
+
         <div>
             <p>
             </p>
@@ -145,7 +139,7 @@
                 <th>1st issue</th>
                 <th>Description</th>
             </tr>
-           
+
 
         </table>
 

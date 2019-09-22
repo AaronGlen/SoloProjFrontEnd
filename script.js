@@ -1,3 +1,5 @@
+let idHero = "";
+let idTeam = "";
 
 function heroPage() {
     location.href = "heros.html";
@@ -112,7 +114,6 @@ function deleteHero() {
     return false;
 }
 ////////////////////////// Update
-let idHero = "";
 
 function heroId(request) {
     data = JSON.parse(request.response);
@@ -130,7 +131,7 @@ function heroHTML() {
     location.href = "heros.html";
 }
 
-function editHero(form) {
+function updateHero(form) {
     let heroInfo = {};
     for (let element of form.elements) {
         heroInfo[element.id] = element.value;
@@ -138,7 +139,6 @@ function editHero(form) {
     httpRequest("PUT", 'http://35.222.59.218:9000/hero/' + idHero, heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(heroInfo));
     return false;
 }
-let idTeam = "";
 
 function teamId(request) {
     data = JSON.parse(request.response);
@@ -177,43 +177,29 @@ function httpRequest(method, url, callback, headers, body) {
 }
 
 ///////////////////// Search 
-function searchHeroes() {
+function searchTable(input, table) {
     var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("nameHero");
+    input = document.getElementById(input);
     filter = input.value.toUpperCase();
-    table = document.getElementById("heroTable");
+    table = document.getElementById(table);
     tr = table.getElementsByTagName("tr");
-  
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[1];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
         }
-      }
     }
-  }
+}
 
-  function searchTeams() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("nameTeam");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("teamTable");
-    tr = table.getElementsByTagName("tr");
-  
-   
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[1];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    }
-  }
+function searchHeroes() {
+    searchTable("nameHero", "heroTable")
+}
+
+function searchTeams() {
+    searchTable("nameTeam", "teamTable")
+}
