@@ -27,7 +27,7 @@ function onLoadHeroTable(request) {
 }
 
 function onLoadHero() {
-    httpRequest('GET', 'http://35.222.59.218:9000/heroes', onLoadHeroTable, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', onLoadHeroTable, { "Content-Type": "application/json" });
 }
 
 function onLoadTeamTable(request) {
@@ -39,7 +39,7 @@ function onLoadTeamTable(request) {
 }
 
 function onLoadTeam() {
-    httpRequest('GET', 'http://35.222.59.218:9000/teams', onLoadTeamTable, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', onLoadTeamTable, { "Content-Type": "application/json" });
 }
 //////////////////////////////////// Create
 function handleSubmitHero(form) {
@@ -48,7 +48,7 @@ function handleSubmitHero(form) {
         formDataObj[element.id] = element.value;
     }
     console.log(formDataObj);
-    httpRequest("POST", 'http://35.222.59.218:9000/hero', heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj))
+    httpRequest("POST", 'http://35.222.59.218:9000/hero', heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj));
     return false;
 }
 
@@ -58,13 +58,13 @@ function handleSubmitTeam(form) {
         formDataObj[element.id] = element.value;
     }
     console.log(formDataObj);
-    httpRequest("POST", 'http://35.222.59.218:9000/team', teamHTML, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj))
+    httpRequest("POST", 'http://35.222.59.218:9000/team', teamHTML, { 'Content-Type': 'application/json' }, JSON.stringify(formDataObj));
     return false;
 }
 /////////////////// DropBox's
-function teamDropBox(request) {
+function updateTeamDropBox(request) {
     data = JSON.parse(request.response);
-    dropBoxEntries(document.getElementById("teamId"), data, "id");
+    dropBoxEntries(document.getElementById("updateTeamId"), data, "id");
 }
 
 function deleteTeamDropBox(request) {
@@ -72,43 +72,43 @@ function deleteTeamDropBox(request) {
     dropBoxEntries(document.getElementById("deleteTeamId"), data, "id");
 }
 
-function heroDropBox(request) {
+function updateHeroDropBox(request) {
     data = JSON.parse(request.response);
-    dropBoxEntries(document.getElementById("heroId"), data, "id");
+    dropBoxEntries(document.getElementById("updateHeroId"), data, "id");
 }
 
 function deleteHeroDropBox(request) {
     data = JSON.parse(request.response);
     dropBoxEntries(document.getElementById("deleteHeroId"), data, "id");
 }
-
 function dropBoxEntries(select, data, value) {
     for (let i = 0; i < data.length; i++) {
-        let entry = document.createElement("OPTION")
+        let entry = document.createElement("OPTION");
         entry.innerHTML = data[i][value];
         select.append(entry);
     }
 }
 
 function dropBoxTeam() {
-    httpRequest('GET', 'http://35.222.59.218:9000/teams', deleteTeamDropBox, { "Content-Type": "application/json" })
-    httpRequest('GET', 'http://35.222.59.218:9000/teams', teamDropBox, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', deleteTeamDropBox, { "Content-Type": "application/json" });
+    httpRequest('GET', 'http://35.222.59.218:9000/teams', updateTeamDropBox, { "Content-Type": "application/json" });
 }
 
 function dropBoxHero() {
-    httpRequest('GET', 'http://35.222.59.218:9000/heroes', deleteHeroDropBox, { "Content-Type": "application/json" })
-    httpRequest('GET', 'http://35.222.59.218:9000/heroes', heroDropBox, { "Content-Type": "application/json" })
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', deleteHeroDropBox, { "Content-Type": "application/json" });
+    httpRequest('GET', 'http://35.222.59.218:9000/heroes', updateHeroDropBox, { "Content-Type": "application/json" });
+
 }
 ///////////////////////////////// Delete
 function deleteTeam() {
     var id = document.getElementById("deleteTeamId").value;
-    httpRequest("DELETE", 'http://35.222.59.218:9000/team/' + id, teamHTML, { "Content-Type": "application/json" })
+    httpRequest("DELETE", 'http://35.222.59.218:9000/team/' + id, teamHTML, { "Content-Type": "application/json" });
     return false;
 }
 
 function deleteHero() {
     var id = document.getElementById("deleteHeroId").value;
-    httpRequest("DELETE", 'http://35.222.59.218:9000/hero/' + id, heroHTML, { "Content-Type": "application/json" })
+    httpRequest("DELETE", 'http://35.222.59.218:9000/hero/' + id, heroHTML, { "Content-Type": "application/json" });
     return false;
 }
 ////////////////////////// Update
@@ -120,8 +120,9 @@ function heroId(request) {
 }
 
 function getHeroId() {
-    idHero = document.getElementById("heroId").value;
-    httpRequest("GET", 'http://35.222.59.218:9000/hero/' + idHero, heroId, { "Content-Type": "application/json" })
+    idHero = document.getElementById("updateHeroId").value;
+    console.log(idHero);
+    httpRequest("GET", 'http://35.222.59.218:9000/hero/' + idHero, heroId, { "Content-Type": "application/json" });
     return false;
 }
 
@@ -134,7 +135,7 @@ function editHero(form) {
     for (let element of form.elements) {
         heroInfo[element.id] = element.value;
     }
-    httpRequest("PUT", 'http://35.222.59.218:9000/hero/' + idHero, heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(heroInfo))
+    httpRequest("PUT", 'http://35.222.59.218:9000/hero/' + idHero, heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(heroInfo));
     return false;
 }
 let idTeam = "";
@@ -145,8 +146,8 @@ function teamId(request) {
 }
 
 function getTeamId() {
-    idTeam = document.getElementById("teamId").value;
-    httpRequest("GET", 'http://35.222.59.218:9000/team/' + idTeam, teamId, { "Content-Type": "application/json" })
+    idTeam = document.getElementById("updateTeamId").value;
+    httpRequest("GET", 'http://35.222.59.218:9000/team/' + idTeam, teamId, { "Content-Type": "application/json" });
     return false;
 }
 
@@ -159,7 +160,7 @@ function editTeam(form) {
     for (let element of form.elements) {
         teamInfo[element.id] = element.value;
     }
-    httpRequest("PUT", 'http://35.222.59.218:9000/team/' + idTeam, teamHTML, { 'Content-Type': 'application/json' }, JSON.stringify(teamInfo))
+    httpRequest("PUT", 'http://35.222.59.218:9000/team/' + idTeam, teamHTML, { 'Content-Type': 'application/json' }, JSON.stringify(teamInfo));
     return false;
 }
 //////////////////// httpRequests
@@ -174,3 +175,4 @@ function httpRequest(method, url, callback, headers, body) {
     }
     body ? request.send(body) : request.send();
 }
+
