@@ -56,16 +56,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form onsubmit="return editTeam(this)" id="teamEditForm">
+                        <form onsubmit="return updateTeam(this)" id="teamEditForm">
 
                             <h2> Team name: </h2>
-                            <input class='form-control' type='text' id="teamName" placeholder="e.g. Avengers">
+                            <input class='form-control' type='text' id="teamNameUpdate" placeholder="e.g. Avengers">
 
                             <h2> 1st issue appeared or first main apperance: </h2>
-                            <input class='form-control' type='text' id="issueOne" placeholder="e.g. Avengers#1">
+                            <input class='form-control' type='text' id="issueOneUpdate" placeholder="e.g. Avengers#1">
 
                             <h2> Description of team (e.g. members, major storylines, etc):</h2>
-                            <input class='form-control' type='text' id="description" placeholder="e.g. the worlds strongest heros">
+                            <input class='form-control' type='text' id="descriptionUpdate" placeholder="e.g. the worlds strongest heroes">
 
                             <button type="submit" class="btn btn-danger"> Update Team </button>
 
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="col-md-3 offset-md-1">
-                    <form onsubmit="return getTeamId(this)" id="teamIdEditForm">
+                    <form onsubmit="return getTeamId(this)" id="teamIdUpdateForm">
 
                         <select class="rounded" id="updateTeamId"></select>
                         <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#teamUpdateModal">
