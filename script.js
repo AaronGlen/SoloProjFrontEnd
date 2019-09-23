@@ -132,13 +132,18 @@ function heroHTML() {
 }
 
 function updateHero(form) {
-    let heroInfo = {};
-    for (let element of form.elements) {
-        heroInfo[element.id] = element.value;
-    }
+    heroNameUpdate = document.getElementById("heroNameUpdate").value;
+    issueOneUpdate = document.getElementById("issueOneUpdate").value;
+    descriptionUpdate = document.getElementById("descriptionUpdate").value;
+    let heroInfo = {
+        "heroName":heroNameUpdate,
+        "issueOne":issueOneUpdate,
+        "description":descriptionUpdate
+    };
     httpRequest("PUT", 'http://35.222.59.218:9000/hero/' + idHero, heroHTML, { 'Content-Type': 'application/json' }, JSON.stringify(heroInfo));
     return false;
 }
+
 
 function teamId(request) {
     data = JSON.parse(request.response);
