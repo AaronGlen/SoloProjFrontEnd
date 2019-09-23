@@ -42,13 +42,14 @@
                         <form onsubmit="return handleSubmitHero(this)" id="heroForm">
 
                             <h2> Hero name: </h2>
-                            <input class='form-control' type='text' id="heroName">
+                            <input class='form-control' type='text' id="heroName" placeholder="e.g. Captain Marvel">
 
                             <h2> 1st issue appeared or first main apperance: </h2>
-                            <input class='form-control' type='text' id="issueOne">
+                            <input class='form-control' type='text' id="issueOne" placeholder="e.g. Captain Marvel#1">
 
                             <h2> Description of hero (e.g. powers, charactor traits, etc):</h2>
-                            <input class='form-control' type='text' id="description">
+                            <input class='form-control' type='text' id="description"
+                                placeholder="e.g. energy manipulation powers">
                             <button type="submit" class="btn btn-primary"> Create Hero </button>
                         </form>
 
@@ -64,22 +65,22 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="heroModalLabel">Create Hero</h5>
+                        <h5 class="modal-title" id="heroModalLabel">Update Hero</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form onsubmit="return editHero(this)" id="heroEditForm">
+                        <form onsubmit="return updateHero(this)" id="heroUpdateForm">
 
                             <h2> Hero name: </h2>
-                            <input class='form-control' type='text' id="heroName">
+                            <input class='form-control' type='text' id="heroName" placeholder="e.g. Captain Marvel">
 
                             <h2> 1st issue appeared or first main apperance: </h2>
-                            <input class='form-control' type='text' id="issueOne">
+                            <input class='form-control' type='text' id="issueOne" placeholder="e.g. Captain Marvel#1">
 
                             <h2> Description of hero (e.g. powers, charactor traits, etc):</h2>
-                            <input class='form-control' type='text' id="description">
+                            <input class='form-control' type='text' id="description" placeholder="e.g. energy manipulation powers">
 
                             <button type="submit" class="btn btn-primary"> Update Hero </button>
 
@@ -92,7 +93,7 @@
             </div>
         </div>
 
-      
+
 
 
         <div class="container">
@@ -103,13 +104,14 @@
                         Create New Hero
                     </button>
                 </div>
-              
+
 
                 <div class="col-md-3 offset-md-1">
-                    <form onsubmit="return getHeroId()" id="heroIdEditForm">
+                    <form onsubmit="return getHeroId()" id="heroIdUpdateForm">
 
                         <select class="rounded" id="updateHeroId"></select>
-                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#heroUpdateModal"> Update Hero </button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal"
+                            data-target="#heroUpdateModal"> Update Hero </button>
                     </form>
                 </div>
 
@@ -125,15 +127,10 @@
             </div>
         </div>
 
+        <div>
+            <input type="text" id="nameHero" onkeyup="searchHeroes()" placeholder="Search for Hero by name...">
 
-        <style>
-            table,
-            th,
-            td {
-                border: 1px solid black;
-            }
-        </style>
-
+        </div>
         <div>
             <p>
             </p>
@@ -147,6 +144,7 @@
                 <th>1st issue</th>
                 <th>Description</th>
             </tr>
+
 
 
 

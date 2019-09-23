@@ -42,14 +42,27 @@
     background-color: lightcoral;
     font-size: 25px;
     border: 10px solid red;
+
 }
-.th{
-    border: 1px solid white
-}
+
 
 #titleH {
     color: white;
     background-color: royalblue;
     border: border-style color;
     font-size: 100PX;
+}
+
+#nameTeam{
+    border: 1px solid red
+}
+
+#nameHero{
+    border: 1px solid blue
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
 }
