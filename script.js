@@ -131,7 +131,7 @@ function heroHTML() {
     location.href = "heros.html";
 }
 
-function updateHero(form) {
+function updateHero() {
     heroNameUpdate = document.getElementById("heroNameUpdate").value;
     issueOneUpdate = document.getElementById("issueOneUpdate").value;
     descriptionUpdate = document.getElementById("descriptionUpdate").value;
@@ -160,11 +160,15 @@ function teamHTML() {
     location.href = "teams.html";
 }
 
-function editTeam(form) {
-    let teamInfo = {};
-    for (let element of form.elements) {
-        teamInfo[element.id] = element.value;
-    }
+function updateTeam(form) {
+    teamNameUpdate = document.getElementById("teamNameUpdate").value;
+    issueOneUpdate = document.getElementById("issueOneUpdate").value;
+    descriptionUpdate = document.getElementById("descriptionUpdate").value;
+    let teamInfo = {
+        "teamName":teamNameUpdate,
+        "issueOne":issueOneUpdate,
+        "description":descriptionUpdate
+    };
     httpRequest("PUT", 'http://35.222.59.218:9000/team/' + idTeam, teamHTML, { 'Content-Type': 'application/json' }, JSON.stringify(teamInfo));
     return false;
 }
