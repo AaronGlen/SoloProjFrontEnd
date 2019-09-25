@@ -36,6 +36,15 @@ My project consisted of making a website where users are able create/delete hero
 attributes of 1st issue and a description of the hero/team. Each attribute of the heroes/teams can be edited. Users are also able to
 search for heroes/teams by name.
 
+<a name="depl"></a>
+## Deployment
+
+The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event
+
+
+![Deployment Pipeline](/Images/ciPipeLine.jpeg)
+<a name="tech"></a>
+### Technologies Used
 
 
 
