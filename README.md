@@ -36,6 +36,20 @@ My project consisted of making a website where users are able create/delete hero
 attributes of 1st issue and a description of the hero/team. Each attribute of the heroes/teams can be edited. Users are also able to
 search for heroes/teams by name.
 
+<a name="architecture"></a>
+## Architecture
+<a name="erd"></a>
+### Entity Relationship Diagrams
+#### Initial plan
+![Initial ERD](/image/initialERD.jpg)
+
+The ERD above 
+
+#### Delivered solution
+![Final ERD](/images/finalERD.jpg)
+
+The ERD above is the final two tables 
+
 <a name="depl"></a>
 ## Deployment
 
