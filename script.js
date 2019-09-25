@@ -37,7 +37,6 @@ function newTableEntries(table) {
 
 function onLoadHeroTable(request) {
     let data = JSON.parse(request.response);
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
         newTableEntries(document.getElementById("heroTable"), data[i].id, data[i].heroName, data[i].issueOne, data[i].description);
     }
@@ -49,7 +48,6 @@ function onLoadHero() {
 
 function onLoadTeamTable(request) {
     let data = JSON.parse(request.response);
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
         newTableEntries(document.getElementById("teamTable"), data[i].id, data[i].teamName, data[i].issueOne, data[i].description);
     }
@@ -64,7 +62,6 @@ function handleSubmitHero(form) {
     for (let element of form.elements) {
         formDataObj[element.id] = element.value;
     }
-    console.log(formDataObj);
     httpRequest("POST", "http://35.222.59.218:9000/hero", heroHTML, { "Content-Type": "application/json" }, JSON.stringify(formDataObj));
     return false;
 }
@@ -98,12 +95,12 @@ function deleteTeamDropBox(request) {
 }
 
 function updateHeroDropBox(request) {
-    data = JSON.parse(request.response);
+    let data = JSON.parse(request.response);
     dropBoxEntries(document.getElementById("updateHeroId"), data, "id");
 }
 
 function deleteHeroDropBox(request) {
-    data = JSON.parse(request.response);
+    let data = JSON.parse(request.response);
     dropBoxEntries(document.getElementById("deleteHeroId"), data, "id");
 }
 
@@ -134,12 +131,10 @@ function deleteHero() {
 
 function heroId(request) {
     let data = JSON.parse(request.response);
-    console.log(data);
 }
 
 function getHeroId() {
     idHero = document.getElementById("updateHeroId").value;
-    console.log(idHero);
     httpRequest("GET", "http://35.222.59.218:9000/hero/" + idHero, heroId, { "Content-Type": "application/json" });
     return false;
 }
@@ -188,15 +183,14 @@ function updateTeam(form) {
 
 ///////////////////// Search 
 function searchTable(input, table) {
-    var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById(input);
-    filter = input.value.toUpperCase();
     table = document.getElementById(table);
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
+    let  filter = input.value.toUpperCase();
+    let  tr = table.getElementsByTagName("tr");
+    for (let i = 0; i < tr.length; i++) {
+        let  td = tr[i].getElementsByTagName("td")[1];
         if (td) {
-            txtValue = td.textContent || td.innerText;
+            let  txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
             } else {
