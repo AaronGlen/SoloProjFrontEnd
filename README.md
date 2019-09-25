@@ -41,7 +41,7 @@ search for heroes/teams by name.
 <a name="erd"></a>
 ### Entity Relationship Diagrams
 #### Initial plan
-![Initial ERD](/image/initialERD.jpg)
+![Initial ERD](/images/initialERD.jpg)
 
 The ERD above 
 
