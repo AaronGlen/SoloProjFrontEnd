@@ -42,7 +42,7 @@ search for heroes/teams by name.
 The build, test and deployment process was automated using Jenkins, with a webhook to GitHub which was triggered with every push event
 
 
-![Deployment Pipeline](/Images/ciPipeLine.jpeg)
+![Deployment Pipeline](/images/ciPipeLine.jpeg)
 <a name="tech"></a>
 ### Technologies Used
 
