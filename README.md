@@ -50,6 +50,19 @@ The API and front end where first tested locally before being pushed up online, 
 <a name="tech"></a>
 ### Technologies Used
 
+*   MySQL Database Engine - Database
+*   Java - API Logic
+*   JavaScript - Front End Logic
+*   Draw.io - Wireframes and ERDs
+*   HTML, CSS, Bootstrap Studio - Front End Design
+*   Postman - API call tests
+*   Apache2 - Deployment
+*   Jenkins - CI Server
+*   Maven - Dependency Management
+*   [Git](https://github.com/AaronGlen/SoloProjFrontEnd.git) - VCS
+*   [Trello](https://trello.com/b/pVnNall5/hero-team) - Project Tracking
+*   GCP - Live Environment
+
 
 
 
