@@ -40,7 +40,7 @@ search for heroes/teams by name.
 ## Deployment
 
 The building, testing and deployment process was automated using Jenkins, where jenkins would copy the needed repositroys every hour to an external directory to be then hosted by apache2. The API is ran by maven on a virtual machine via GCP (Google cloud PLATFORM).
-[Jenkins Conifg](images/jenkins.jpeg).
+[Jenkins Conifg](images/jenkins.jpg).
 
 The API and front end where first tested locally before being pushed up online, postman API call requests were first used locally before the API calls were implemented into Java script.
 
