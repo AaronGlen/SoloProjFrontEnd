@@ -78,6 +78,26 @@ The API and front end where first tested locally before being pushed up online, 
 *   GCP - Live Environment
 
 
+<a name="FE"></a>
+## Front End Design
+
+### Wireframes
+Hero page
+![Hero Wireframe](/images/heroTable.jpg)
+Team Changes
+![Team  Wireframe](/images/teamTable.jpg)
+
+### Final Look
+
+Hero page
+![Hero page](/images/endHeroTable.jpg)
+Hero update
+![Update hero](/images/endUpdateHero.jpg)
+Hero page
+![Team page](/images/endTeamTable.jpg)
+Hero update
+![Create team](/images/endCreateTeam.jpg)
+
 
 
 
