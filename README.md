@@ -43,12 +43,13 @@ search for heroes/teams by name.
 #### Initial plan
 ![Initial ERD](/images/originalERD.jpg)
 
-The ERD above 
+The ERD above is my enitial diagram for my project, the sections a colour coded based on what i thougth was most important to acomplish in my project. In my final application I manged to deliver two tables that did not comunicate with each other.
+
 
 #### Delivered solution
 ![Final ERD](/images/finalERD.jpg)
 
-The ERD above is the final two tables 
+As shown above i decided to remove a few attributes from both tables so that i could focus on the functionality of my final delivered project.
 <a name="testing"></a>
 ## Testing
 
