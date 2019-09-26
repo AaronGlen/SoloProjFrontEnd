@@ -124,8 +124,8 @@ Aaron Glendinning
 <a name="ack"></a>
 ## Acknowledgements
 
-* QA consulting and our okay instructors
-* The rest of our decent cohort on the programme
+* QA consulting and our brilliant instructors
+* My fellow CEO's at Annoymous and Co and the rest of our wonderful cohort on the programme
 
 
 
