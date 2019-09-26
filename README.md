@@ -84,10 +84,8 @@ The API and front end where first tested locally before being pushed up online, 
 Hero page
 ![Hero Wireframe](/images/heroTable.jpg)
 Team page
-![Team  Wireframe](/images/teamTable.jpg)
-
+![Team Wireframe](/images/teamTable.jpg)
 ### Final Look
-
 Hero page
 ![Hero page](/images/endHeroTable.jpg)
 Hero update
