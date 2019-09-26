@@ -91,12 +91,19 @@ Team page
 
 ### Final Look
 Hero page
+
 ![Hero page](/images/endHeroTable.jpg)
+
 Hero update
+
 ![Hero update](/images/endUpdateHero.jpg)
+
 Team page
+
 ![Team page](/images/endTeamTable.jpg)
+
 Team Update
+
 ![Team create](/images/endCreateTeam.jpg)
 
 
