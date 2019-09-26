@@ -39,7 +39,7 @@ search for heroes/teams by name.
 <a name="erd"></a>
 ### Entity Relationship Diagrams
 #### Initial plan
-![Initial ERD](/images/originalERD.jpg)
+![Initial ERD](/images/initialERD.jpg)
 
 The ERD above is my initial diagram for my project, the sections a colour coded based on what I thought was most important to accomplish in my project. In my final application, I managed to deliver two tables that did not communicate with each other.
 
