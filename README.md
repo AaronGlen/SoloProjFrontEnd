@@ -80,11 +80,10 @@ The API and front end where first tested locally before being pushed up online, 
 
 <a name="FE"></a>
 ## Front End Design
-
 ### Wireframes
 Hero page
 ![Hero Wireframe](/images/heroTable.jpg)
-Team Changes
+Team page
 ![Team  Wireframe](/images/teamTable.jpg)
 
 ### Final Look
