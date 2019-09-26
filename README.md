@@ -55,6 +55,8 @@ The ERD above is the final two tables
 I tested my project by using Mockito tests for the API and Selenium tests for the front end.
 
 Test covarge for the backend is at 97% as shown [here](/images/coverage97.jpg)
+
+Below are links to my codacy reviews, my Api repository and my selenium testing repository. 
 *   [Codacy Dashboard for API Review](https://app.codacy.com/manual/AaronGlen/SoloProjSpringApp/dashboard)
 
 *   [Codacy Dashboard for Front End Review](https://app.codacy.com/manual/AaronGlen/SoloProjFrontEnd/dashboard)
