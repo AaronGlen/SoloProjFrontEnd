@@ -106,7 +106,26 @@ Team Update
 
 ![Team create](/images/endCreateTeam.jpg)
 
+<a name="improve"></a>
+## Improvements for the Future
 
+Currently the hero and teams tables do not communicate with each other, in my next sprint I would like to set up a one to many relation ship between the tables, so users are able to create teams with the heros on the database. In future sprints id like the hero/team attributes to be pre loaded into the input box's when updating a hero/team entry, so that a user can update a hero/team entry without writing in all the attributes again.
+
+In later Sprints i would like to create a story arcs table that would have a many to many relationship with heroes and teams, so that users are able to find stories featureing their favoriote heroes and teams. 
+
+
+
+
+<a name="auth"></a>
+## Authors
+
+Aaron Glendinning
+
+<a name="ack"></a>
+## Acknowledgements
+
+* QA consulting and our okay instructors
+* The rest of our decent cohort on the programme
 
 
 
