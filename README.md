@@ -82,9 +82,11 @@ The API and front end where first tested locally before being pushed up online, 
 ## Front End Design
 ### Wireframes
 Hero page
+
 ![Hero Wireframe](/images/heroTable.jpg)
 
 Team page
+
 ![Team Wireframe](/images/teamTable.jpg)
 
 ### Final Look
