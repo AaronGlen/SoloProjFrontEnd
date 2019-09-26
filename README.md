@@ -91,11 +91,11 @@ Team page
 Hero page
 ![Hero page](/images/endHeroTable.jpg)
 Hero update
-![Update hero](/images/endUpdateHero.jpg)
-Hero page
+![Hero update](/images/endUpdateHero.jpg)
+Team page
 ![Team page](/images/endTeamTable.jpg)
-Hero update
-![Create team](/images/endCreateTeam.jpg)
+Team Update
+![Team create](/images/endCreateTeam.jpg)
 
 
 
