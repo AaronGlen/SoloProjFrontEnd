@@ -10,8 +10,7 @@ In fulfilment of the solo project assignment due friday week 8 at QA consulting.
    * [Entity Relationship Diagrams](#erd)
 	
 [Testing](#testing)
-   * [Report](#report)
-
+ 
      
 [Deployment](#depl)
    * [Technologies Used](#tech)
