@@ -85,6 +85,7 @@ Hero page
 ![Hero Wireframe](/images/heroTable.jpg)
 Team page
 ![Team Wireframe](/images/teamTable.jpg)
+
 ### Final Look
 Hero page
 ![Hero page](/images/endHeroTable.jpg)
