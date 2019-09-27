@@ -31,6 +31,7 @@ function newTableEntries(table) {
     }
     table.append(row);
 }
+
 function dropBoxEntries(select, data, value) {
     for (let i = 0; i < data.length; i++) {
         let entry = document.createElement("OPTION");
